@@ -88,13 +88,13 @@ initLineChart() {
   this.lineChart = new Chart(ctx, {
     type: 'line',
     data: {
-      labels: [], // Dates will be added dynamically
+      labels: [],
       datasets: [
         {
           label: 'Number of Calls',
           borderColor: 'blue',
           borderWidth: 2,
-          data: [], // Call count will be added dynamically
+          data: [], 
         },
       ],
     },
@@ -129,12 +129,12 @@ initLineChart() {
 
 
   updateLineChart() {
-  // Get the counts of calls for each date
+ 
   const counts = this.getCountsByDate();
 
-  // Ensure that counts and labels are defined
+ 
   if (counts && this.lineChart.data.labels) {
-    // Update the chart data
+    
     this.lineChart.data.labels = Object.keys(counts);
     this.lineChart.data.datasets[0].data = Object.values(counts);
 
